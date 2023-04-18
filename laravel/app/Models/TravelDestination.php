@@ -19,22 +19,15 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'login',
-        'password',
-        'admin',
+        'id',
+        'continent',
+        'country',
+        'destination',
+        'description',
         'active',
     ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-    ];
-
-    public function travels(): HasMany {
+    public function users(): HasMany {
         return $this->hasMany(UserTravels::class);
     }
 }

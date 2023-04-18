@@ -6,16 +6,16 @@
       <meta name="robots" content="noindex, nofollow">
       <meta name="author" content="Jakub Klonowski">
       <title>Envoy Travel Companion</title>
-      <link rel="stylesheet" href="app.css">
+      <link rel="stylesheet" href="style.css">
    </head>
    <body>
-      <nav>
+      <nav id="toolbar">
          <a href="/">Home</a>
-         @if (isset($_SESSION['mode']) && ($_SESSION['mode'] == 'user' || $_SESSION['mode'] == 'admin'))
+         @if (session('admin') === false || session('admin') === true)
             <a href="/envoy">Envoys</a>
             <a href="/account">Account</a>
-            @if ($_SESSION['mode'] == 'admin')
-               <a href="/admin">Admin</a> 
+            @if (session('admin') === true)
+               <a href="/admin">Admin Panel</a> 
             @endif
             <a href="/logout">Logout</a>
          @else
