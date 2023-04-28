@@ -1,9 +1,13 @@
 body {
-    background-image: url(graphics/background.png);
+    background-image: url(img/background.png);
     background-size: cover;
     background-repeat: no-repeat;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
 }
 
+/* anchor CSS */
 a {
     text-decoration: none;
     color: black;
@@ -19,9 +23,80 @@ a:visited {
     color: black;
 }
 
+/* table CSS */
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+th:hover, td:hover {
+  background-color: darkgoldenrod;
+}
+
+/* input && label CSS */
+label {
+  font-weight: bold;
+}
+
+input {
+  height: 50px;
+  border: 1px solid #229091;
+  font-size: 1.5rem;
+}
+
+/* button CSS */
+button {
+  --c:  #229091;
+  
+  box-shadow: 0 0 0 .1em inset var(--c); 
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: 
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+}
+
+button:hover {
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+
+button:active {
+  box-shadow: 0 0 9e9q inset #0009; 
+  background-color: var(--c);
+  color: #fff;
+}
+
+button {
+  font-family: system-ui, sans-serif;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: .1em .6em;
+  border: none;
+}
+
+.delete-btn {
+  color: red;
+  font-weight: bold;
+}
+
+/* toolbar CSS */
 #toolbar {
-    position: sticky;
-    top: 0px;
-    background-color: #D9EEE1;
-    padding: 10px 10px 10px 10px;
+  position: sticky;
+  top: 0px;
+  font-weight: bold;
+}
+
+#toolbar > a:hover {
+  color: #229091;
+}
+
+/* footer CSS */
+footer {
+  font-size: 1rem;
 }

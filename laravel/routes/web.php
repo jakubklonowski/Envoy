@@ -28,11 +28,22 @@ Route::post('/register', 'App\Http\Controllers\RegistrationController@store');
 // DELETE register
 Route::delete('/register', 'App\Http\Controllers\RegistrationController@destroy');
 
-// GET (user) account
-Route::get('/account', 'App\Http\Controllers\AccountController@index');
+// GET user actions
+Route::get('/user', 'App\Http\Controllers\UserController@index');
+// GET user account options
+Route::get('/user/options', 'App\Http\Controllers\UserController@options');
+// GET user travel history
+Route::get('/user/travels', 'App\Http\Controllers\UserController@travels');
 // GET travels search
-Route::get('/account/travels/search', 'App\Http\Controllers\AccountController@search');
-// GET travel history
-Route::get('/account/travels', 'App\Http\Controllers\AccountController@travels');
-// GET (user) account options
-Route::get('/account/options', 'App\Http\Controllers\AccountController@options');
+Route::get('/user/travels/search', 'App\Http\Controllers\UserController@search');
+// POST travels search
+Route::post('/user/travels/search', 'App\Http\Controllers\UserController@search');
+// GET add travels form
+Route::get('/user/travels/add', 'App\Http\Controllers\UserController@store');
+// POST add travel
+Route::post('/user/travels/add', 'App\Http\Controllers\UserController@store');
+// GET modify travel form
+Route::get('/user/travels/edit', 'App\Http\Controllers\UserController@edit');
+// POST modify travel
+Route::post('/user/travels/edit', 'App\Http\Controllers\UserController@edit');
+

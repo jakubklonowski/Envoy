@@ -13,7 +13,7 @@
 
         <button>Login</button>
     </form>
-</section>
+</section><hr>
 
 <!-- register form -->
 <section>

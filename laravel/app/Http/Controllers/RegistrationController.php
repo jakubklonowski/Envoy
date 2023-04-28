@@ -12,13 +12,12 @@ class RegistrationController extends Controller
     public function store(Request $request) {
         $this->validate(request(), [
             'login' => 'required|unique:users,login',
-            'password0' => 'required',
+            'password0' => 'required|min:8',
             'password1' => 'same:password0'
         ]);
 
         $login = $request->input('login');
         $password = $request->input('password0');
-        // $repeatPassword = $request->input('password1');
         
         $hash = Hash::make($password);
 

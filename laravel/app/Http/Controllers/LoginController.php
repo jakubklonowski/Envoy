@@ -31,7 +31,7 @@ class LoginController extends Controller
             else if ($user->admin === 0) {
                 session(['admin' => false]);
             }
-            return redirect('/account');
+            return redirect('/user');
         }
     }
 
